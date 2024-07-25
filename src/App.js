@@ -8,9 +8,9 @@ import Home from "./components/Home";
 import Preloader from "./components/Preloader";
 import Footer from "./components/contact/Footer";
 import AdminWrapper from "./components/Admin/AdminWrapper";
-import Registration from "./components/Admin/AdminWrapper"; // Import Registration component
 import "./App.css";
 import ContactWrapper from "./components/Admin/ContactWrapper";
+import ThankYou from "./components/AboutUs/ThankYou";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -33,6 +33,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/admin" element={<AdminWrapper />} />
           <Route path="/admin/contact" element={<ContactWrapper />} />
+          <Route path="/thank-you" element={<ThankYou />} />
         </Routes>
       </div>
     </Router>

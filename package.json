@@ -1,7 +1,7 @@
 {
   "name": "landing",
   "version": "0.1.0",
-  "homepage": "https://induseducationworld.com/",
+  "homepage": "https://induseducationworld.com",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.6.0",

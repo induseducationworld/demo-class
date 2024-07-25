@@ -22,28 +22,35 @@ const About = () => {
               <div className="section-title relative-position mb20 headline text-left">
                 <span className="subtitle ml42 text-uppercase">ABOUT US</span>
                 <h2>
-                  We are <span>Indus Education World</span> working since 1980.
+                  We are <span>Indus Education World</span> with 25 years of
+                  experience.
                 </h2>
                 <p>
-                  Indus Neet is an initiative by a group of Doctors and IIT'ians
-                  with more than 20 years of Teaching experience. We specialize
-                  in preparing droppers, 12th pass out students, and offer
-                  morning batches specifically tailored for 12th pass students
-                  aiming to crack NEET exams.
+                  Indus is an initiative by a group of Doctors and IIT'ians with
+                  more than 20 years of Teaching experience. We specialize in
+                  preparing droppers, 12th pass out students, and offer morning
+                  batches specifically tailored for 12th pass students aiming to
+                  crack NEET exams.
                 </p>
               </div>
               <div className="about-content-text">
                 <p>
                   We take our mission of increasing global access to quality
                   education seriously. We connect learners to the best
-                  universities and institutions from around the world. Drop Year
-                  Batch start date:
+                  universities and institutions from around the world.
                 </p>
                 <div className="about-list mb65 ul-li-block">
                   <ul>
                     <li>1st August 2024 Classes, 4 days a week.</li>
                     <li>2 Free Trial classes per subject</li>
                     <li>Study Modules</li>
+                    <li>
+                      Morning Batches for 12th pass/Droppers students for
+                      JEE(mains/advanced) & NEET
+                    </li>
+                    <li>
+                      Separate Batch for Maths for Commerce and Arts Students
+                    </li>
                   </ul>
                 </div>
                 {/* <div className="about-btn">

@@ -1,0 +1,19 @@
+{
+  "9": {
+    "General": ["Science & Maths", "Science", "Maths"]
+  },
+  "10": {
+    "General": ["Science", "Maths"]
+  },
+  "11": {
+    "Science": ["Physics", "Maths", "Chemistry", "Biology"],
+    "Commerce": ["Maths"],
+    "Arts": ["Maths"]
+  },
+  "12": {
+    "Science": ["Physics", "Maths", "Chemistry", "Biology"],
+    "Commerce": ["Maths"],
+    "Arts": ["Maths"]
+  },
+  "Droppers": ["Morning Batches - JEE Mains/Advanced", "Morning Batches - NEET"]
+}

@@ -4,7 +4,7 @@ import about2 from "../../assets/img/about/abt-5.jpeg";
 import about3 from "../../assets/img/about/abt-6.jpeg";
 import about4 from "../../assets/img/about/abt-7.jpeg";
 import "bootstrap/dist/css/bootstrap.min.css";
-import ct from "../../assets/img/teacher/ct-1.jpg";
+import ct from "../../assets/img/gallery/brochure.jpg";
 
 const AboutUsSection = () => {
   return (
@@ -25,7 +25,7 @@ const AboutUsSection = () => {
                 </div>
               </div>
 
-              <div className="about-text-item" id="#message">
+              <div className="about-text-item" id="message">
                 <div className="section-title-2 headline text-left">
                   <h2>
                     <span>Message from our Director</span>
@@ -59,6 +59,11 @@ const AboutUsSection = () => {
                   </h2>
                 </div>
               </div>
+            </div>
+          </Col>
+          <Col md={3}>
+            <div className="bg-mockup text-center">
+              <img src={ct} alt="Brochure" className="img-fluid" />
             </div>
           </Col>
         </Row>

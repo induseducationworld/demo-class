@@ -1,23 +1,39 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import BASE_URL from "../../config";
+import batchOptions from "./batches.json";
+
 const Register = () => {
   const [formData, setFormData] = useState({
     name: "",
     number: "",
     email: "",
-    confirmDroppers: false,
+    selectedClass: "9",
+    selectedStream: "",
+    selectedBatch: "",
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [alertMessage, setAlertMessage] = useState(null);
   const [errorMessage, setErrorMessage] = useState(null);
 
+  const navigate = useNavigate();
+
+  const streamOptions = ["Science", "Commerce", "Arts"];
+
+  // Determine available batches based on selected class and stream
+  const availableBatches =
+    formData.selectedClass === "Droppers"
+      ? batchOptions["Droppers"] || []
+      : formData.selectedClass === "11" || formData.selectedClass === "12"
+      ? batchOptions[formData.selectedClass]?.[formData.selectedStream] || []
+      : batchOptions[formData.selectedClass] || [];
+
   const handleChange = (e) => {
-    const { name, value, type, checked } = e.target;
-    const val = type === "checkbox" ? checked : value;
+    const { name, value } = e.target;
     setFormData({
       ...formData,
-      [name]: val,
+      [name]: value,
     });
   };
 
@@ -28,12 +44,6 @@ const Register = () => {
     setErrorMessage(null);
 
     try {
-      if (!formData.confirmDroppers) {
-        throw new Error(
-          "Please confirm that you have passed out 12th and opt for the droppers batch."
-        );
-      }
-
       const response = await fetch(`${BASE_URL}/students/register`, {
         method: "POST",
         headers: {
@@ -49,14 +59,16 @@ const Register = () => {
 
       const data = await response.json();
       console.log("Success:", data);
-      setAlertMessage(
-        "Registration successful! You will be informed for upcoming demo class via email."
-      );
+
+      navigate("/thank-you");
+
       setFormData({
         name: "",
         number: "",
         email: "",
-        confirmDroppers: false,
+        selectedClass: "9",
+        selectedStream: "",
+        selectedBatch: "",
       });
     } catch (error) {
       console.error("Error:", error);
@@ -71,7 +83,7 @@ const Register = () => {
       <div className="register-content">
         <div className="register-fomr-title text-center">
           <h3 className="bold-font">Free Demo Class.</h3>
-          <p>Get yourself registered for Indus NEET Dropper's batchs</p>
+          <p>Get yourself registered for Indus's Upcoming batches</p>
         </div>
         {alertMessage && (
           <div className="alert alert-success" role="alert">
@@ -121,28 +133,57 @@ const Register = () => {
               required
             />
           </div>
-
-          <div className="mb-3">
-            <div className="form-check" style={{ marginTop: "10px" }}>
-              <input
-                type="checkbox"
-                id="confirmDroppers"
-                name="confirmDroppers"
-                checked={formData.confirmDroppers}
+          <div className="contact-info mb-3">
+            <select
+              className="form-control"
+              name="selectedClass"
+              value={formData.selectedClass}
+              onChange={handleChange}
+              required
+            >
+              <option value="9">Class 9</option>
+              <option value="10">Class 10</option>
+              <option value="11">Class 11</option>
+              <option value="12">Class 12</option>
+              <option value="Droppers">Droppers</option>
+            </select>
+          </div>
+          {(formData.selectedClass === "11" ||
+            formData.selectedClass === "12") && (
+            <div className="contact-info mb-3">
+              <select
+                className="form-control"
+                name="selectedStream"
+                value={formData.selectedStream}
                 onChange={handleChange}
                 required
-              />
-              <label
-                htmlFor="checkBox"
-                style={{ backgroundColor: "#000", color: "#fff" }}
               >
-                {" "}
-                Confirm that you have passed out 12th and opt for the droppers
-                batch
-              </label>
+                <option value="">Select Stream</option>
+                {streamOptions.map((stream, index) => (
+                  <option key={index} value={stream}>
+                    {stream}
+                  </option>
+                ))}
+              </select>
             </div>
+          )}
+          <div className="contact-info mb-3">
+            <select
+              className="form-control"
+              name="selectedBatch"
+              value={formData.selectedBatch}
+              onChange={handleChange}
+              required
+            >
+              <option value="">Select Batch</option>
+              {Array.isArray(availableBatches) &&
+                availableBatches.map((batch, index) => (
+                  <option key={index} value={batch}>
+                    {batch}
+                  </option>
+                ))}
+            </select>
           </div>
-
           <div className="nws-button text-uppercase text-center white text-capitalize">
             <button
               type="submit"
