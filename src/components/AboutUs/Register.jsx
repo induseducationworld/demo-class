@@ -19,7 +19,7 @@ const Register = () => {
 
   const navigate = useNavigate();
 
-  const streamOptions = ["Science", "Commerce", "Arts"];
+  const streamOptions = ["Science"];
 
   // Determine available batches based on selected class and stream
   const availableBatches =

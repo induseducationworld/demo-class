@@ -41,7 +41,6 @@ const About = () => {
                 </p>
                 <div className="about-list mb65 ul-li-block">
                   <ul>
-                    <li>1st August 2024 Classes, 4 days a week.</li>
                     <li>2 Free Trial classes per subject</li>
                     <li>Study Modules</li>
                     <li>
@@ -53,18 +52,6 @@ const About = () => {
                     </li>
                   </ul>
                 </div>
-                {/* <div className="about-btn">
-                  <div className="genius-btn gradient-bg text-center text-uppercase ul-li-block bold-font">
-                    <a href="#">
-                      About Us <FaCaretRight />
-                    </a>
-                  </div>
-                  <div className="genius-btn gradient-bg text-center text-uppercase ul-li-block bold-font">
-                    <a href="#">
-                      Contact Us <FaCaretRight />
-                    </a>
-                  </div>
-                </div> */}
               </div>
             </div>
           </Col>

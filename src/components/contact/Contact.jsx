@@ -60,7 +60,11 @@ const Contact = () => {
                     <div className="address-details ul-li-block">
                       <ul>
                         <li>
-                          <span>Primary: </span>9560037769
+                          <span>Arun Sir: </span>9540286699
+                        </li>
+                        <li>
+                          {" "}
+                          <span>Dr. Aparna Teotia: </span>+91 98712 01411
                         </li>
                       </ul>
                     </div>

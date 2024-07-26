@@ -36,6 +36,9 @@ const Header = () => {
                     <li>
                       <a href="#contactus">Contact Us</a>
                     </li>
+                    <li>
+                      <a href="">Scholarship Test</a>
+                    </li>
                   </ul>
                 </div>
               </nav>
